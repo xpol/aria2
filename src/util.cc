@@ -1889,7 +1889,7 @@ void sleep(long seconds)
 {
 #if defined(HAVE_WINSOCK2_H)
   ::Sleep(seconds * 1000);
-#elif HAVE_SLEEP
+#elif defined(HAVE_SLEEP)
   ::sleep(seconds);
 #elif defined(HAVE_USLEEP)
   ::usleep(seconds * 1000000);
